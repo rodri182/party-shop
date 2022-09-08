@@ -1,10 +1,10 @@
-h1
+.navbar
 {
-    background-color: aqua;
+    background-color: rgb(131, 136, 136);
 }
 
 .icono
 {
     font-size: 30px;
-    color: rgb(102, 48, 229);
+    color: rgb(122, 74, 218);
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {CartWidget} from "./CartWidget";
+import "./Navbar.css";
 
 export const Navbar = () => {
   return (
-   <nav className="navbar navbar-expand-lg bg-light">
+   <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <Link className="navbar-brand" to="./">Party-Shop</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
