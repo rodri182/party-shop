@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-const Video = ({producto, titulo, cant, colores, description, start}) => {
+const ItemList = ({producto, titulo, cant, colores, description, start}) => {
     const [rate, setRate] = useState(start);   
     
     const handleClick = () => {
@@ -23,4 +23,4 @@ const Video = ({producto, titulo, cant, colores, description, start}) => {
     );
 }
 
-export default Video;
+export default ItemList;

@@ -1,4 +1,4 @@
-import Video from "../components/Video";
+import ItemList from "../components/ItemList";
 import { useEffect, useState } from 'react';
 import customFetch from "../utils/CustomFetch";
 const dataFromBD = [
@@ -40,12 +40,12 @@ const dataFromBD = [
   cant: "103",
   colores: "solo de paw patrol",
   producto: "https://http2.mlstatic.com/D_NQ_NP_725609-MLA41742385143_052020-O.jpg",
-  description: "Piñata con forma de paw patrol para llenarla de caramelos y usarla en tu fiesta",
+  description: "Piñata con forma de paw patrol para llenarla de caramelos y usarla en tu fiest",
 }
 
 ];
 
-const Videos = () => {
+const ItemListContainer = () => {
  
   const[data,setData]= useState([]);
   useEffect(() => {
@@ -55,15 +55,12 @@ const Videos = () => {
      
   }, []);
 
-  const report = () => {
-    console.log("Hola Mundo");
-  };
 
   return (
     <>
       {
       data.map((item) => (
-        <Video
+        <ItemList
           key={item.id}
           start={0}
           titulo={item.titulo}
@@ -77,4 +74,4 @@ const Videos = () => {
   );
 };
 
-export default Videos;
+export default ItemListContainer;
