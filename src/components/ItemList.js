@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import app from "../App.css";
 const ItemList = ({producto, titulo, cant, colores, description, start}) => {
     const [rate, setRate] = useState(start);   
     
