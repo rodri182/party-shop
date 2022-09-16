@@ -1,6 +1,8 @@
 import {useState} from "react";
-import "../App.css" 
-export const Contador = () => {
+ 
+
+
+export const Contador = ({stock, initial}) => {
   const [counter, setCounter] = useState(1);
 
     return (
@@ -11,8 +13,8 @@ export const Contador = () => {
           <h1>{counter}</h1>
         </div>
         <div class="buttons">
-          <button disabled={counter>=5}onClick={()=>{setCounter(counter + 1)}}>+</button>
-          <button disabled={counter<=1}onClick={()=>{setCounter(counter - 1)}}>-</button>
+          <button disabled={counter>=stock}onClick={()=>{setCounter(counter + 1)}}>+</button>
+          <button disabled={counter<=initial}onClick={()=>{setCounter(counter - 1)}}>-</button>
         </div>
       </div>
     </div>
