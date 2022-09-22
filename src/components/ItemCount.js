@@ -2,7 +2,7 @@ import {useState} from "react";
  
 
 
-export const Contador = ({stock, initial}) => {
+export const Contador = ({stock, initial, onAdd}) => {
   const [counter, setCounter] = useState(1);
 
     return (
@@ -15,6 +15,7 @@ export const Contador = ({stock, initial}) => {
         <div class="buttons">
           <button disabled={counter>=stock}onClick={()=>{setCounter(counter + 1)}}>+</button>
           <button disabled={counter<=initial}onClick={()=>{setCounter(counter - 1)}}>-</button>
+          <button variant="contained" color="primary" onClick={()=>onAdd(counter)}>Agregar al carrito</button>
         </div>
       </div>
     </div>

@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
 import "../App.css";
+import { Link } from "react-router-dom";
 
-const Item = ({producto, titulo, colores, cant, description, start}) => {
+
+const Item = ({id, producto, titulo, colores, cant, description, start, precio}) => {
     const [rate, setRate] = useState(start);  
     
     
@@ -19,10 +21,11 @@ const Item = ({producto, titulo, colores, cant, description, start}) => {
             </div>
             <div className="video-info">
             <h3>{titulo}</h3>
-            <h4>Colores: {colores}</h4> 
              <p>Cantidad: {cant}</p>
+             <p>Precio: ${precio}</p>
              <button disabled={rate>=cant} onClick={handleClick}>comprar</button> {rate}
             <p>{description}</p>
+            <Link to={`/item/${id}`}>Detalles</Link>
             </div>
         </div>
         </>
