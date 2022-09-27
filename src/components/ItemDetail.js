@@ -1,15 +1,21 @@
-import {Contador} from "./ItemCount";
+import ItemCount from "./ItemCount";
 import Container from 'react-bootstrap/Container';
 import {useState} from "react";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
+
 
 const ItemDetail =({item}) => {
 
-    const[contador, setContador]= useState(0);
+    const[itemCount, setItemCount]= useState(0);
+    const ctx= useContext(CartContext);
     const onAdd = (qty) => {
-        alert (" usted ha elejido " + qty + "producto");
+        alert (" usted ha elejido " + qty + " unidades de este producto");
+        setItemCount(qty);
+        ctx.addItem(item, qty);
     }
     
   return (
@@ -34,11 +40,12 @@ const ItemDetail =({item}) => {
                       </div>
                       <div>
                       {
-                        contador===0
-                        ?<Contador>hola</Contador>
-                        :<Link className="Boton-carro" to="./cart" >Add carro</Link>
+                        itemCount === 0
+                            ?<ItemCount stock={item.cant} initial={itemCount} onAdd={onAdd}/>
+                            :<Link to="/cart"><button color="secondary">ir al carro</button></Link>
                       }
                       </div>
+                      <p>.....</p>
                   </div>
               </div>
           </div>

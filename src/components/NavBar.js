@@ -23,7 +23,7 @@ export const Navbar = () => {
             <Link className="nav-link" to="./category/3">Compras</Link>
             </li>
           </ul>
-         <p><CartWidget/></p>
+         <Link to="/cart"><CartWidget/></Link>
     </div>
   </div>
 </nav>
