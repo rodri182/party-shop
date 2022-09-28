@@ -1,11 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faCartShopping} from "@fortawesome/free-solid-svg-icons";
-import estilo from "./Navbar.css";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
+import { Badge } from "@mui/material";
 
-export const CartWidget =() => {
+const CartWidget =() => {
+    const ctx= useContext(CartContext);
     return( 
-       <div className="icono">
+       
+        <Badge badgeContent ={ctx.calItemCant()} color="primary">
+
         <FontAwesomeIcon icon={faCartShopping}/>
-        </div>
+        </Badge>
+    
     );
 }
+
+export default CartWidget;

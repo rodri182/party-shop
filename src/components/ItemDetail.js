@@ -9,13 +9,14 @@ import { CartContext } from "./CartContext";
 
 
 const ItemDetail =({item}) => {
-
+    
     const[itemCount, setItemCount]= useState(0);
     const ctx= useContext(CartContext);
     const onAdd = (qty) => {
         alert (" usted ha elejido " + qty + " unidades de este producto");
         setItemCount(qty);
-        ctx.addItem(item, qty);
+        ctx.addProducto(item, qty);
+       
     }
     
   return (

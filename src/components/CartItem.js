@@ -17,7 +17,7 @@ const Item = ({id, producto, titulo, colores, cant, description, start, precio})
             </div>
             <div className="video-info">
             <h3>{titulo}</h3>
-             <p>Cantidad: {cant}</p>
+             <p>Cantidad: {ctx.calItemCant()}</p>
              <p>Precio: ${precio}</p>
             <p>{description}</p>
             <button onClick={()=>ctx.removeItem(id)}>cancelar</button>
